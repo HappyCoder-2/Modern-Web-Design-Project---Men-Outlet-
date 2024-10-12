@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Link Clothing Store</title>
+</head>
+<body>
+
+    <!-- Navigation Menu -->
+    <div class="nav-bar">
+        <div class="nav-part-1">
+            <div id="tab-clothing" class="nav-part-1-tabs" onmouseover="showClothingMenu()">Clothing</div>
+            <div id="tab-accessories" class="nav-part-1-tabs" onmouseover="showAccessoriesMenu()">Accessories</div>
+            <div id="tab-new-collection" class="nav-part-1-tabs" onmouseover="showNewCollectionMenu()">New Collection</div>
+            <div id="tab-special-discounts" class="nav-part-1-tabs" onmouseover="showDiscountMenu()">Special Discounts</div>
+        </div>
+
+        <div class="nav-part-2">
+            <div class="nav-part-2-logo"><img class="logo-image" src="images/299101918_501988461926579_5874214902093034468_n.png" alt="logo-image"></div>
+            <div class="nav-part-2-logo-text">LINK Men Clothing</div>
+        </div>
+
+        <div class="nav-part-3">
+            <div class="nav-part-3-tabs" onclick="showSearchMenu()">
+                <div class="nav-part-3-tabs-icon"><svg width="20" height="20" role="img" aria-hidden="true" class="Icon_icon-content-1__kPDLF HeaderSearchBoxLegacy_icon__gSWPg" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 24 24"><path d="M18 10.5C18 6.364 14.636 3 10.5 3S3 6.364 3 10.5 6.364 18 10.5 18a7.46 7.46 0 0 0 4.93-1.862l4.716 4.716.708-.708-4.716-4.715A7.46 7.46 0 0 0 18 10.5M10.5 17C6.916 17 4 14.084 4 10.5S6.916 4 10.5 4 17 6.916 17 10.5 14.084 17 10.5 17"></path></svg></div>
+                <div class="nav-part-3-text">Search</div>
+            </div>
+
+            <div class="nav-part-3-tabs" id="signIn-popUp">
+                <div class="nav-part-3-tabs-icon"><svg width="20" height="20" role="img" aria-hidden="true" class="Icon_icon-content-1__kPDLF Icons_icon___GFz0" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 24 24"><path d="M12 12c2.757 0 5-2.243 5-5s-2.243-5-5-5-5 2.243-5 5 2.243 5 5 5m0-9c2.206 0 4 1.794 4 4s-1.794 4-4 4-4-1.794-4-4 1.794-4 4-4m0 11c-4.56 0-8 3.224-8 7.5v.5h16v-.5c0-4.276-3.44-7.5-8-7.5m-6.981 7c.257-3.454 3.172-6 6.981-6s6.724 2.546 6.981 6z"></path></svg></div>
+                <div class="nav-part-3-text">Sign in</div>
+            </div>
+
+            <div class="nav-part-3-tabs" id="shop-btn-laptop">
+                <div class="nav-part-3-tabs-icon"><svg width="20" height="20" role="img" aria-hidden="true" class="Icon_icon-content-1__kPDLF ShoppingCartButton_icon__BSq_M" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 24 24"><path d="M16 5.9C16 3.7 14.2 2 12 2S8 3.8 8 5.9H4v16h16V6h-4Zm-7 0C9 4.3 10.4 3 12 3s3 1.3 3 2.9zM19 7v14H5V7"></path></svg></div>
+                <div class="nav-part-3-text">Shopping bag</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Responsive Menu -->
+    <div class="responsive-nav-bar">
+        <div class="part-1-burger-menu">
+            <div class="part-1-burger-menu-icon" onclick="showBurgerMenu()"><svg width="24" height="24" role="img" aria-hidden="true" class="Icon_icon-content-1__kPDLF MenuAdaptive_menuIcon__AT3AM" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 24 24"><path d="M21 13H3v-1h18zm0-6H3v1h18zm0 10H3v1h18z"></path></svg></div>
+            <div class="part-1-burger-menu-text">Menu</div>
+        </div>
+
+        <div class="part-2-logo">
+            <div class="part-2-logo-img"><img class="logo-image" src="images/299101918_501988461926579_5874214902093034468_n.png" alt=""></div>
+            <div class="part-2-logo-text">LINK Men Clothing</div>
+        </div>
+
+        <div class="part-3-tabs-icons">
+            <div class="part-3-icon" onclick="showSearchMenu()"><svg width="20" height="20" role="img" aria-hidden="true" class="Icon_icon-content-1__kPDLF HeaderSearchBoxLegacy_icon__gSWPg" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 24 24"><path d="M18 10.5C18 6.364 14.636 3 10.5 3S3 6.364 3 10.5 6.364 18 10.5 18a7.46 7.46 0 0 0 4.93-1.862l4.716 4.716.708-.708-4.716-4.715A7.46 7.46 0 0 0 18 10.5M10.5 17C6.916 17 4 14.084 4 10.5S6.916 4 10.5 4 17 6.916 17 10.5 14.084 17 10.5 17"></path></svg></div>
+            <div class="part-3-icon" id="signin-icon-responsive"><svg width="20" height="20" role="img" aria-hidden="true" class="Icon_icon-content-1__kPDLF Icons_icon___GFz0" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 24 24"><path d="M12 12c2.757 0 5-2.243 5-5s-2.243-5-5-5-5 2.243-5 5 2.243 5 5 5m0-9c2.206 0 4 1.794 4 4s-1.794 4-4 4-4-1.794-4-4 1.794-4 4-4m0 11c-4.56 0-8 3.224-8 7.5v.5h16v-.5c0-4.276-3.44-7.5-8-7.5m-6.981 7c.257-3.454 3.172-6 6.981-6s6.724 2.546 6.981 6z"></path></svg></div>
+            <div class="part-3-icon" id="shop-btn-tablet"><svg width="20" height="20" role="img" aria-hidden="true" class="Icon_icon-content-1__kPDLF ShoppingCartButton_icon__BSq_M" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 24 24"><path d="M16 5.9C16 3.7 14.2 2 12 2S8 3.8 8 5.9H4v16h16V6h-4Zm-7 0C9 4.3 10.4 3 12 3s3 1.3 3 2.9zM19 7v14H5V7"></path></svg></div>
+        </div>
+    </div>
+
+    <div class="part-1-close-menu">
+        <div class="part-1-close-menu-icon" onclick="hideBurgerMenu()"><svg width="24" height="24" role="img" aria-hidden="true" class="Icon_icon-content-1__kPDLF MenuAdaptive_menuIcon__AT3AM" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 24 24"><path d="M17.354 7.354 12.707 12l4.647 4.646-.708.708L12 12.707l-4.646 4.647-.708-.708L11.293 12 6.646 7.354l.708-.708L12 11.293l4.646-4.647z"></path></svg></div>
+        <div class="part-1-close-menu-text">Close</div>
+    </div>
+
+    <!-- Burger Menu -->
+    <div class="burger-menu">
+        <div class="burger-menu-tab">
+            <div class="burger-part-img"><img alt="" loading="lazy" width="50" height="50" decoding="async" data-nimg="1" class="Submenu_imageOutlet__uRSA2" srcset="https://www.mangooutlet.com/assets/menu-images/260820240923/BOLITA_Prendas_.jpg?imwidth=70&amp;imdensity=1&amp;ts=1 1x, https://www.mangooutlet.com/assets/menu-images/260820240923/BOLITA_Prendas_.jpg?imwidth=280&amp;imdensity=1&amp;ts=1 2x" src="https://www.mangooutlet.com/assets/menu-images/260820240923/BOLITA_Prendas_.jpg?imwidth=280&amp;imdensity=1&amp;ts=1" style="color: transparent;"></div>
+            <div class="burger-part-text">Clothing</div>
+            <div class="burger-part-righ-arrow"><svg width="20" height="20" role="img" aria-hidden="true" class="Icon_icon-content-1__kPDLF Icon_rotate-rtl__uGAS6" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 24 24"><path d="m9.354 18.354-.707-.708L14.293 12 8.647 6.354l.707-.708L15.707 12z"></path></svg></div>
+        </div>
+
+        <div class="burger-menu-decorative-line"></div>
+
+        <div class="burger-menu-tab">
+            <div class="burger-part-img"><img alt="" loading="lazy" width="50" height="50" decoding="async" data-nimg="1" class="Submenu_imageOutlet__uRSA2" srcset="https://www.mangooutlet.com/assets/menu-images/260820240924/BOLITA_Zapatos_y_accesorios.jpg?imwidth=70&amp;imdensity=1&amp;ts=1 1x, https://www.mangooutlet.com/assets/menu-images/260820240924/BOLITA_Zapatos_y_accesorios.jpg?imwidth=280&amp;imdensity=1&amp;ts=1 2x" src="https://www.mangooutlet.com/assets/menu-images/260820240924/BOLITA_Zapatos_y_accesorios.jpg?imwidth=280&amp;imdensity=1&amp;ts=1" style="color: transparent;"></div>
+            <div class="burger-part-text">Accessories</div>
+            <div class="burger-part-righ-arrow"><svg width="20" height="20" role="img" aria-hidden="true" class="Icon_icon-content-1__kPDLF Icon_rotate-rtl__uGAS6" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 24 24"><path d="m9.354 18.354-.707-.708L14.293 12 8.647 6.354l.707-.708L15.707 12z"></path></svg></div>
+        </div>
+
+        <div class="burger-menu-decorative-line"></div>
+
+        <div class="burger-menu-tab">
+            <div class="burger-part-img"><img alt="" loading="lazy" width="50" height="50" decoding="async" data-nimg="1" class="Submenu_imageOutlet__uRSA2" srcset="https://www.mangooutlet.com/assets/menu-images/260820240925/BOLITA-Nueva_Coleccio%CC%81n.jpg?imwidth=70&amp;imdensity=1&amp;ts=1 1x, https://www.mangooutlet.com/assets/menu-images/260820240925/BOLITA-Nueva_Coleccio%CC%81n.jpg?imwidth=280&amp;imdensity=1&amp;ts=1 2x" src="https://www.mangooutlet.com/assets/menu-images/260820240925/BOLITA-Nueva_Coleccio%CC%81n.jpg?imwidth=280&amp;imdensity=1&amp;ts=1" style="color: transparent;"></div>
+            <div class="burger-part-text">New Collection</div>
+            <div class="burger-part-righ-arrow"><svg width="20" height="20" role="img" aria-hidden="true" class="Icon_icon-content-1__kPDLF Icon_rotate-rtl__uGAS6" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 24 24"><path d="m9.354 18.354-.707-.708L14.293 12 8.647 6.354l.707-.708L15.707 12z"></path></svg></div>
+        </div>
+
+        <div class="burger-menu-decorative-line"></div>
+
+        <div class="burger-menu-tab">
+            <div class="burger-part-img"><img alt="" loading="lazy" width="50" height="50" decoding="async" data-nimg="1" class="Submenu_imageOutlet__uRSA2" srcset="https://www.mangooutlet.com/assets/menu-images/260820240923/BOLITA_Descuentos_especiales.jpg?imwidth=70&amp;imdensity=1&amp;ts=1 1x, https://www.mangooutlet.com/assets/menu-images/260820240923/BOLITA_Descuentos_especiales.jpg?imwidth=280&amp;imdensity=1&amp;ts=1 2x" src="https://www.mangooutlet.com/assets/menu-images/260820240923/BOLITA_Descuentos_especiales.jpg?imwidth=280&amp;imdensity=1&amp;ts=1" style="color: transparent;"></div>
+            <div class="burger-part-text">Special Discount</div>
+            <div class="burger-part-righ-arrow"><svg width="20" height="20" role="img" aria-hidden="true" class="Icon_icon-content-1__kPDLF Icon_rotate-rtl__uGAS6" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 24 24"><path d="m9.354 18.354-.707-.708L14.293 12 8.647 6.354l.707-.708L15.707 12z"></path></svg></div>
+        </div>
+
+    </div>
+
+    <!-- Search Menu -->
+    <div class="search-menu">
+        
+        <div class="part-1-input">
+            <div class="part-1-input-icon"><svg width="20" height="20" role="img" aria-hidden="true" class="Icon_icon-content-1__kPDLF HeaderSearchBoxLegacy_icon__gSWPg" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 24 24"><path d="M18 10.5C18 6.364 14.636 3 10.5 3S3 6.364 3 10.5 6.364 18 10.5 18a7.46 7.46 0 0 0 4.93-1.862l4.716 4.716.708-.708-4.716-4.715A7.46 7.46 0 0 0 18 10.5M10.5 17C6.916 17 4 14.084 4 10.5S6.916 4 10.5 4 17 6.916 17 10.5 14.084 17 10.5 17"></path></svg></div>
+            <input type="text" placeholder="Search">
+        </div>
+        
+        <div class="part-2-icons">
+            <div class="part-2-icons-tabs" onclick="hideSearchMenu()">
+                <div class="part-2-icons-tabs-icon"><svg width="20" height="20" role="img" aria-hidden="true" class="Icon_icon-content-1__kPDLF MenuAdaptive_menuIcon__AT3AM" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 24 24"><path d="M17.354 7.354 12.707 12l4.647 4.646-.708.708L12 12.707l-4.646 4.647-.708-.708L11.293 12 6.646 7.354l.708-.708L12 11.293l4.646-4.647z"></path></svg></div>
+                <div class="part-2-icons-tabs-text">Cancel</div>
+            </div>
+
+            <div class="part-2-icons-tabs" id="signin-icon-search">
+                <div class="part-2-icons-tabs-icon"><svg width="20" height="20" role="img" aria-hidden="true" class="Icon_icon-content-1__kPDLF Icons_icon___GFz0" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 24 24"><path d="M12 12c2.757 0 5-2.243 5-5s-2.243-5-5-5-5 2.243-5 5 2.243 5 5 5m0-9c2.206 0 4 1.794 4 4s-1.794 4-4 4-4-1.794-4-4 1.794-4 4-4m0 11c-4.56 0-8 3.224-8 7.5v.5h16v-.5c0-4.276-3.44-7.5-8-7.5m-6.981 7c.257-3.454 3.172-6 6.981-6s6.724 2.546 6.981 6z"></path></svg></div>
+                <div class="part-2-icons-tabs-text"></div>
+            </div>
+
+            <div class="part-2-icons-tabs">
+                <div class="part-2-icons-tabs-icon"><svg width="20" height="20" role="img" aria-hidden="true" class="Icon_icon-content-1__kPDLF ShoppingCartButton_icon__BSq_M" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 24 24"><path d="M16 5.9C16 3.7 14.2 2 12 2S8 3.8 8 5.9H4v16h16V6h-4Zm-7 0C9 4.3 10.4 3 12 3s3 1.3 3 2.9zM19 7v14H5V7"></path></svg></div>
+                <div class="part-2-icons-tabs-text"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Menu Tabs -->
+
+    <div class="menu-tab-main">
+        <div class="menu-tab-main-left">
+            <div class="tab-main-left-title" id="tab-clothing">CLOTHING</div>
+            <div class="tab-main-left-list">
+                <ul>
+                    <li><a href="#" id="tab-shirts">Shirts</a></li>
+                    <li><a href="#" id="tab-t-shirts">T-shirts</a></li>
+                    <li><a href="#" id="tab-polos">Polos</a></li>
+                    <li><a href="#" id="tab-trousers">Trousers</a></li>
+                    <li><a href="#" id="tab-shorts">Shorts</a></li>
+                    <li><a href="#" id="tab-jeans">Jeans</a></li>
+                    <li><a href="#" id="tab-sweaters">Sweaters</a></li>
+                    <li><a href="#" id="tab-coats">Coats and Jackets</a></li>
+                </ul>
+            </div>
+        </div>
+    
+        <div class="menu-tab-main-right">
+            <div class="pic-pluS-text-1" style="display: flex;">
+                <img src="images/clothing-1.jpg" alt="cover-clothing" class="cover-clothing-1">
+                <div class="cover-text-1">C L O T H I N G</div>
+            </div>
+    
+            <div class="pic-pluS-text-2" style="display: none;">
+                <img src="images/1. cover.png" alt="cover-shirts" class="cover-clothing-2">
+                <div class="cover-text-2">S H I R T S</div>
+            </div>
+    
+            <div class="pic-pluS-text-3" style="display: none;">
+                <img src="images/t-shirt.jpg" alt="cover-t-shirts" class="cover-clothing-3">
+                <div class="cover-text-3">T - S H I R T S</div>
+            </div>
+    
+            <div class="pic-pluS-text-4" style="display: none;">
+                <img src="images/polos.jpg" alt="cover-polos" class="cover-clothing-4">
+                <div class="cover-text-4">P O L O S</div>
+            </div>
+    
+            <div class="pic-pluS-text-5" style="display: none;">
+                <img src="images/trousers.jpg" alt="cover-trousers" class="cover-clothing-5">
+                <div class="cover-text-5">T R O U S E R S</div>
+            </div>
+    
+            <div class="pic-pluS-text-6" style="display: none;">
+                <img src="images/shorts.jpg" alt="cover-shorts" class="cover-clothing-6">
+                <div class="cover-text-6">S H O R T S</div>
+            </div>
+    
+            <div class="pic-pluS-text-7" style="display: none;">
+                <img src="images/jeans.jpg" alt="cover-jeans" class="cover-clothing-7">
+                <div class="cover-text-7">J E A N S</div>
+            </div>
+    
+            <div class="pic-pluS-text-8" style="display: none;">
+                <img src="images/sweaters.jpg" alt="cover-sweaters" class="cover-clothing-8">
+                <div class="cover-text-8">S W E A T E R S</div>
+            </div>
+    
+            <div class="pic-pluS-text-9" style="display: none;">
+                <img src="images/coats.jpg" alt="cover-coats" class="cover-clothing-9">
+                <div class="cover-text-9">COATS AND JACKETS</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="menu-tab-main" id="menu-tab-accessories">
+        <div class="menu-tab-main-left">
+            <div class="tab-main-left-title" id="tab-clothing">ACCESSORIES</div>
+            <div class="tab-main-left-list">
+                <ul>
+                    <li><a href="#" id="tab-shirts">Backpacks and Bags</a></li>
+                    <li><a href="#" id="tab-t-shirts">Belts</a></li>
+                    <li><a href="#" id="tab-polos">Wallets</a></li>
+                    <li><a href="#" id="tab-trousers">Sunglasses</a></li>
+                    <li><a href="#" id="tab-shorts">Ties and Bow ties</a></li>
+                    <li><a href="#" id="tab-jeans">Scarves</a></li>
+                    <li><a href="#" id="tab-sweaters">Hats</a></li>
+                    <li><a href="#" id="tab-coats">Gloves</a></li>
+                </ul>
+            </div>
+        </div>
+    
+        <div class="menu-tab-main-right">
+            <div class="pic-pluS-text-1" style="display: flex;">
+                <img src="images/accessories.jpeg" alt="cover-clothing" class="cover-clothing-1" width="70%">
+                <div class="cover-text-1">A C C E S S O R I E S</div>
+            </div>
+    
+            <div class="pic-pluS-text-2" style="display: none;">
+                <img src="images/backpack.webp" alt="cover-shirts" class="cover-clothing-2">
+                <div class="cover-text-2">BACKPACKS AND BAGS</div>
+            </div>
+    
+            <div class="pic-pluS-text-3" style="display: none;">
+                <img src="images/belts.jpg" alt="cover-t-shirts" class="cover-clothing-3">
+                <div class="cover-text-3">B E L T S</div>
+            </div>
+    
+            <div class="pic-pluS-text-4" style="display: none;">
+                <img src="images/wallets.webp" alt="cover-polos" class="cover-clothing-4">
+                <div class="cover-text-4">W A L L E T S</div>
+            </div>
+    
+            <div class="pic-pluS-text-5" style="display: none;">
+                <img src="images/sunglasses.jpg" alt="cover-trousers" class="cover-clothing-5">
+                <div class="cover-text-5">S U N G L A S S E S</div>
+            </div>
+    
+            <div class="pic-pluS-text-6" style="display: none;">
+                <img src="images/ties.jpg" alt="cover-shorts" class="cover-clothing-6">
+                <div class="cover-text-6">TIES AND BOW TIES</div>
+            </div>
+    
+            <div class="pic-pluS-text-7" style="display: none;">
+                <img src="images/scarves.webp" alt="cover-jeans" class="cover-clothing-7">
+                <div class="cover-text-7">S C A R V E S</div>
+            </div>
+    
+            <div class="pic-pluS-text-8" style="display: none;">
+                <img src="images/hats.jpg" alt="cover-sweaters" class="cover-clothing-8">
+                <div class="cover-text-8">H A T S</div>
+            </div>
+    
+            <div class="pic-pluS-text-9" style="display: none;">
+                <img src="images/gloves.jpg" alt="cover-coats" class="cover-clothing-9">
+                <div class="cover-text-9">G L O V E S</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="menu-tab-main" id="menu-tab-new-collection">
+        <div class="menu-tab-main-left">
+            <div class="tab-main-left-title" id="tab-clothing">NEW COLLECTION</div>
+            <!-- <div class="tab-main-left-list">
+                <ul>
+                    <li><a href="#" id="tab-shirts">Backpacks and Bags</a></li>
+                    <li><a href="#" id="tab-t-shirts">Belts</a></li>
+                    <li><a href="#" id="tab-polos">Wallets</a></li>
+                    <li><a href="#" id="tab-trousers">Sunglasses</a></li>
+                    <li><a href="#" id="tab-shorts">Ties and Bow ties</a></li>
+                    <li><a href="#" id="tab-jeans">Scarves</a></li>
+                    <li><a href="#" id="tab-sweaters">Hats</a></li>
+                    <li><a href="#" id="tab-coats">Gloves</a></li>
+                </ul>
+            </div> -->
+        </div>
+    
+        <div class="menu-tab-main-right">
+            <div class="pic-pluS-text-1" style="display: flex;">
+                <img src="images/newcollection.webp" alt="cover-clothing" class="cover-clothing-1" width="70%">
+                <div id="cover-text-1" class="cover-text-1">N E W&nbsp;&nbsp;&nbsp;&nbsp;C O L L E C T I O N</div>
+            </div>
+    
+            <div class="pic-pluS-text-2" style="display: none;">
+                <img src="images/backpack.webp" alt="cover-shirts" class="cover-clothing-2">
+                <div class="cover-text-2">BACKPACKS AND BAGS</div>
+            </div>
+    
+            <div class="pic-pluS-text-3" style="display: none;">
+                <img src="images/belts.jpg" alt="cover-t-shirts" class="cover-clothing-3">
+                <div class="cover-text-3">B E L T S</div>
+            </div>
+    
+            <div class="pic-pluS-text-4" style="display: none;">
+                <img src="images/wallets.webp" alt="cover-polos" class="cover-clothing-4">
+                <div class="cover-text-4">W A L L E T S</div>
+            </div>
+    
+            <div class="pic-pluS-text-5" style="display: none;">
+                <img src="images/sunglasses.jpg" alt="cover-trousers" class="cover-clothing-5">
+                <div class="cover-text-5">S U N G L A S S E S</div>
+            </div>
+    
+            <div class="pic-pluS-text-6" style="display: none;">
+                <img src="images/ties.jpg" alt="cover-shorts" class="cover-clothing-6">
+                <div class="cover-text-6">TIES AND BOW TIES</div>
+            </div>
+    
+            <div class="pic-pluS-text-7" style="display: none;">
+                <img src="images/scarves.webp" alt="cover-jeans" class="cover-clothing-7">
+                <div class="cover-text-7">S C A R V E S</div>
+            </div>
+    
+            <div class="pic-pluS-text-8" style="display: none;">
+                <img src="images/hats.jpg" alt="cover-sweaters" class="cover-clothing-8">
+                <div class="cover-text-8">H A T S</div>
+            </div>
+    
+            <div class="pic-pluS-text-9" style="display: none;">
+                <img src="images/gloves.jpg" alt="cover-coats" class="cover-clothing-9">
+                <div class="cover-text-9">G L O V E S</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="menu-tab-main" id="menu-tab-special-discount">
+        <div class="menu-tab-main-left">
+            <div class="tab-main-left-title" id="tab-clothing">SPECIAL DISCOUNT</div>
+            <!-- <div class="tab-main-left-list">
+                <ul>
+                    <li><a href="#" id="tab-shirts">Backpacks and Bags</a></li>
+                    <li><a href="#" id="tab-t-shirts">Belts</a></li>
+                    <li><a href="#" id="tab-polos">Wallets</a></li>
+                    <li><a href="#" id="tab-trousers">Sunglasses</a></li>
+                    <li><a href="#" id="tab-shorts">Ties and Bow ties</a></li>
+                    <li><a href="#" id="tab-jeans">Scarves</a></li>
+                    <li><a href="#" id="tab-sweaters">Hats</a></li>
+                    <li><a href="#" id="tab-coats">Gloves</a></li>
+                </ul>
+            </div> -->
+        </div>
+    
+        <div class="menu-tab-main-right">
+            <div class="pic-pluS-text-1" style="display: flex;">
+                <img src="images/DISCOUNT.jpg" alt="cover-clothing" class="cover-clothing-1" width="50%">
+                <!-- <div id="cover-text-1" class="cover-text-1"></div> -->
+            </div>
+    
+            <div class="pic-pluS-text-2" style="display: none;">
+                <img src="images/backpack.webp" alt="cover-shirts" class="cover-clothing-2">
+                <div class="cover-text-2">BACKPACKS AND BAGS</div>
+            </div>
+    
+            <div class="pic-pluS-text-3" style="display: none;">
+                <img src="images/belts.jpg" alt="cover-t-shirts" class="cover-clothing-3">
+                <div class="cover-text-3">B E L T S</div>
+            </div>
+    
+            <div class="pic-pluS-text-4" style="display: none;">
+                <img src="images/wallets.webp" alt="cover-polos" class="cover-clothing-4">
+                <div class="cover-text-4">W A L L E T S</div>
+            </div>
+    
+            <div class="pic-pluS-text-5" style="display: none;">
+                <img src="images/sunglasses.jpg" alt="cover-trousers" class="cover-clothing-5">
+                <div class="cover-text-5">S U N G L A S S E S</div>
+            </div>
+    
+            <div class="pic-pluS-text-6" style="display: none;">
+                <img src="images/ties.jpg" alt="cover-shorts" class="cover-clothing-6">
+                <div class="cover-text-6">TIES AND BOW TIES</div>
+            </div>
+    
+            <div class="pic-pluS-text-7" style="display: none;">
+                <img src="images/scarves.webp" alt="cover-jeans" class="cover-clothing-7">
+                <div class="cover-text-7">S C A R V E S</div>
+            </div>
+    
+            <div class="pic-pluS-text-8" style="display: none;">
+                <img src="images/hats.jpg" alt="cover-sweaters" class="cover-clothing-8">
+                <div class="cover-text-8">H A T S</div>
+            </div>
+    
+            <div class="pic-pluS-text-9" style="display: none;">
+                <img src="images/gloves.jpg" alt="cover-coats" class="cover-clothing-9">
+                <div class="cover-text-9">G L O V E S</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Burger Menu - Tabs -->
+
+    <div class="mobile-clothing-main">
+        <div class="mobile-title-part">
+            <div class="mobile-img-arrow"><svg width="20" height="20" role="img" aria-hidden="true" class="Icon_icon-content-1__kPDLF Icon_rotate-rtl__uGAS6 FullPageSubMenu_prevIcon__OPSYr" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 24 24"><path d="M15.353 17.646 9.707 12l5.646-5.646-.707-.708L8.293 12l6.353 6.354z"></path></svg></div>
+            <div class="mobile-title-content">Clothing</div>
+        </div>
+
+        <div class="mobile-decorative-line-part"></div>
+
+        <div class="mobile-content-tabs">
+            <div class="mobile-content-tabs-links">Shirts</div>
+            <div class="mobile-content-tabs-links">T-Shirts</div>
+            <div class="mobile-content-tabs-links">Polos</div>
+            <div class="mobile-content-tabs-links">Trousers</div>
+            <div class="mobile-content-tabs-links">Shorts</div>
+            <div class="mobile-content-tabs-links">Jeans</div>
+            <div class="mobile-content-tabs-links">Sweaters</div>
+            <div class="mobile-content-tabs-links">Coats and Jackets</div>
+        </div>
+    </div>
+
+    <div class="mobile-clothing-main">
+        <div class="mobile-title-part">
+            <div class="mobile-img-arrow"><svg width="20" height="20" role="img" aria-hidden="true" class="Icon_icon-content-1__kPDLF Icon_rotate-rtl__uGAS6 FullPageSubMenu_prevIcon__OPSYr" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 24 24"><path d="M15.353 17.646 9.707 12l5.646-5.646-.707-.708L8.293 12l6.353 6.354z"></path></svg></div>
+            <div class="mobile-title-content">Accessories</div>
+        </div>
+
+        <div class="mobile-decorative-line-part"></div>
+
+        <div class="mobile-content-tabs">
+            <div class="mobile-content-tabs-links">Backpacks and Bags</div>
+            <div class="mobile-content-tabs-links">Belts</div>
+            <div class="mobile-content-tabs-links">Wallets</div>
+            <div class="mobile-content-tabs-links">Sunglasses</div>
+            <div class="mobile-content-tabs-links">Ties and Bow Ties</div>
+            <div class="mobile-content-tabs-links">Scarves</div>
+            <div class="mobile-content-tabs-links">Hats</div>
+            <div class="mobile-content-tabs-links">Gloves</div>
+        </div>
+    </div>
+
+    <div class="mobile-clothing-main">
+        <div class="mobile-title-part">
+            <div class="mobile-img-arrow"><svg width="20" height="20" role="img" aria-hidden="true" class="Icon_icon-content-1__kPDLF Icon_rotate-rtl__uGAS6 FullPageSubMenu_prevIcon__OPSYr" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 24 24"><path d="M15.353 17.646 9.707 12l5.646-5.646-.707-.708L8.293 12l6.353 6.354z"></path></svg></div>
+            <div class="mobile-title-content">New Collection</div>
+        </div>
+
+        <div class="mobile-decorative-line-part"></div>
+
+        <!-- <div class="mobile-content-tabs">
+            <div class="mobile-content-tabs-links">Backpacks and Bags</div>
+            <div class="mobile-content-tabs-links">Belts</div>
+            <div class="mobile-content-tabs-links">Wallets</div>
+            <div class="mobile-content-tabs-links">Sunglasses</div>
+            <div class="mobile-content-tabs-links">Ties and Bow Ties</div>
+            <div class="mobile-content-tabs-links">Scarves</div>
+            <div class="mobile-content-tabs-links">Hats</div>
+            <div class="mobile-content-tabs-links">Gloves</div>
+        </div> -->
+    </div>
+
+    <div class="mobile-clothing-main">
+        <div class="mobile-title-part">
+            <div class="mobile-img-arrow"><svg width="20" height="20" role="img" aria-hidden="true" class="Icon_icon-content-1__kPDLF Icon_rotate-rtl__uGAS6 FullPageSubMenu_prevIcon__OPSYr" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 24 24"><path d="M15.353 17.646 9.707 12l5.646-5.646-.707-.708L8.293 12l6.353 6.354z"></path></svg></div>
+            <div class="mobile-title-content">Special Discount</div>
+        </div>
+
+        <div class="mobile-decorative-line-part"></div>
+
+        <!-- <div class="mobile-content-tabs">
+            <div class="mobile-content-tabs-links">Backpacks and Bags</div>
+            <div class="mobile-content-tabs-links">Belts</div>
+            <div class="mobile-content-tabs-links">Wallets</div>
+            <div class="mobile-content-tabs-links">Sunglasses</div>
+            <div class="mobile-content-tabs-links">Ties and Bow Ties</div>
+            <div class="mobile-content-tabs-links">Scarves</div>
+            <div class="mobile-content-tabs-links">Hats</div>
+            <div class="mobile-content-tabs-links">Gloves</div>
+        </div> -->
+    </div>
+    
+    <!-- Signin Popup Window -->
+
+    <div class="signin-popup-window">
+        
+        <div class="popup-btn-part">
+            <button class="popup-signin-CTA">Sign in</button>
+        </div>
+
+        <div class="register-question">
+            <div class="register-left">Don't have an account?</div>
+            <div class="register-right">Register</div>
+        </div>
+
+        <div class="popup-decoration-line"></div>
+
+        <div class="popup-purchases">
+            <div class="popup-purchases-text">My purchases</div>
+            <div class="popup-purchases-arrow"><svg width="20" height="20" role="img" aria-hidden="true" class="Icon_icon-content-1__kPDLF" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 24 24"><path d="m9.354 18.354-.707-.708L14.293 12 8.647 6.354l.707-.708L15.707 12z"></path></svg></div>
+        </div>
+
+        <div class="popup-decoration-line"></div>
+
+        <div class="popup-help">
+            <div class="popup-help-text">Help</div>
+            <div class="popup-help-arrow"><svg width="20" height="20" role="img" aria-hidden="true" class="Icon_icon-content-1__kPDLF" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 24 24"><path d="m9.354 18.354-.707-.708L14.293 12 8.647 6.354l.707-.708L15.707 12z"></path></svg></div>
+        </div>
+
+    </div>
+
+    <!-- Signin Container -->
+
+    <div class="signin-container">
+
+        <div class="signin-part-title">Sign in</div>
+
+        <div class="signin-part-inputs">
+            
+            <div class="signin-part-email">
+                <div class="email-text-show-hide">E-MAIL</div>
+                <input type="email" class="part-input-email" placeholder="E-mail">
+            </div>
+            <div class="important-notice-show-hide-email">Complete this field to continue</div>
+
+            <div class="signin-part-password">
+                <div class="password-text-show-hide">PASSWORD</div>
+                    <div class="input-combine-input-icon">
+                        <input type="password" class="part-input-password" placeholder="Password">
+                        <div class="part-input-icon-hide"><svg width="20" height="20" role="img" aria-hidden="true" class="Icon_icon-content-1__kPDLF" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 24 24"><path d="m16.878 7.83 3.976-3.976-.708-.708-4.16 4.161C14.825 6.696 13.489 6.266 12 6.266c-5.24 0-8.653 5.242-8.796 5.464l-.173.27.173.27c.091.142 1.527 2.336 3.918 3.9l-3.976 3.976.708.708 4.16-4.161c1.161.611 2.497 1.041 3.986 1.041 5.24 0 8.653-5.242 8.796-5.464l.173-.27-.173-.27c-.091-.142-1.527-2.336-3.918-3.9M4.234 12C4.99 10.959 7.954 7.266 12 7.266c1.181 0 2.267.32 3.236.791L13.733 9.56A3 3 0 0 0 12 9c-1.654 0-3 1.346-3 3 0 .647.21 1.243.56 1.733l-1.706 1.706c-1.862-1.17-3.157-2.801-3.62-3.439M14 12c0 1.103-.897 2-2 2-.37 0-.712-.108-1.01-.284l2.726-2.725c.176.297.284.64.284 1.009m-4 0c0-1.103.897-2 2-2 .37 0 .712.108 1.01.284l-2.726 2.725A2 2 0 0 1 10 12m2 4.734c-1.181 0-2.267-.32-3.236-.791l1.503-1.503c.49.35 1.086.56 1.733.56 1.654 0 3-1.346 3-3a2.97 2.97 0 0 0-.56-1.733l1.706-1.706c1.862 1.17 3.157 2.801 3.62 3.439-.755 1.041-3.72 4.734-7.766 4.734"></path></svg></div>
+                        <div class="part-input-icon-show"><svg width="20" height="20" role="img" aria-hidden="true" class="Icon_icon-content-1__kPDLF" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 24 24"><path d="M12 6.266c-5.24 0-8.653 5.242-8.796 5.464l-.173.27.173.27c.143.222 3.557 5.464 8.796 5.464s8.653-5.242 8.796-5.464l.173-.27-.173-.27c-.143-.222-3.557-5.464-8.796-5.464m0 10.468c-4.046 0-7.01-3.693-7.766-4.734.755-1.041 3.72-4.734 7.766-4.734s7.01 3.693 7.766 4.734c-.755 1.041-3.72 4.734-7.766 4.734M12 9c-1.654 0-3 1.346-3 3s1.346 3 3 3 3-1.346 3-3-1.346-3-3-3m0 5c-1.103 0-2-.897-2-2s.897-2 2-2 2 .897 2 2-.897 2-2 2"></path></svg></div>
+                    </div>
+            </div>
+            <div class="important-notice-show-hide-password">Complete this field to continue</div>
+
+        </div>
+
+        <div class="signin-part-checkbox">
+            <input type="checkbox" class="part-checkbox">
+            <div class="checkbox-text">Stay signed in</div>
+        </div>
+
+        <div class="signin-part-buttons">
+            <div class="button-1"><button class="button-signin">Sign in</button></div>
+            <div class="button-2"><button class="button-new-account">Create account</button></div>
+        </div>
+
+        <div class="signin-part-footer">Forgot your password?</div>
+
+    </div>
+
+    <!-- Registration Container -->
+    
+    <div class="registration-container">
+
+        <div class="registration-form-title">Create your account</div>
+
+        <div class="registration-inputs-part">
+            <div class="registration-email-input">
+                <div class="email-input-title">E-MAIL</div>
+                <input type="email" placeholder="E-mail" class="email-input-field"></input>
+            </div>
+            <div class="registration-email-notification">Complete this field to continue</div>
+
+            <div class="registration-password-input">
+                <div class="password-input-title">PASSWORD</div>
+                <input type="password" placeholder="Password" class="password-input-field"></input>
+                <svg class="password-eye-show" width="20" height="20" role="img" aria-hidden="true" class="Icon_icon-content-1__kPDLF" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 24 24"><path d="M12 6.266c-5.24 0-8.653 5.242-8.796 5.464l-.173.27.173.27c.143.222 3.557 5.464 8.796 5.464s8.653-5.242 8.796-5.464l.173-.27-.173-.27c-.143-.222-3.557-5.464-8.796-5.464m0 10.468c-4.046 0-7.01-3.693-7.766-4.734.755-1.041 3.72-4.734 7.766-4.734s7.01 3.693 7.766 4.734c-.755 1.041-3.72 4.734-7.766 4.734M12 9c-1.654 0-3 1.346-3 3s1.346 3 3 3 3-1.346 3-3-1.346-3-3-3m0 5c-1.103 0-2-.897-2-2s.897-2 2-2 2 .897 2 2-.897 2-2 2"></path></svg>
+                <svg class="password-eye-hide" width="20" height="20" role="img" aria-hidden="true" class="Icon_icon-content-1__kPDLF" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 24 24"><path d="m16.878 7.83 3.976-3.976-.708-.708-4.16 4.161C14.825 6.696 13.489 6.266 12 6.266c-5.24 0-8.653 5.242-8.796 5.464l-.173.27.173.27c.091.142 1.527 2.336 3.918 3.9l-3.976 3.976.708.708 4.16-4.161c1.161.611 2.497 1.041 3.986 1.041 5.24 0 8.653-5.242 8.796-5.464l.173-.27-.173-.27c-.091-.142-1.527-2.336-3.918-3.9M4.234 12C4.99 10.959 7.954 7.266 12 7.266c1.181 0 2.267.32 3.236.791L13.733 9.56A3 3 0 0 0 12 9c-1.654 0-3 1.346-3 3 0 .647.21 1.243.56 1.733l-1.706 1.706c-1.862-1.17-3.157-2.801-3.62-3.439M14 12c0 1.103-.897 2-2 2-.37 0-.712-.108-1.01-.284l2.726-2.725c.176.297.284.64.284 1.009m-4 0c0-1.103.897-2 2-2 .37 0 .712.108 1.01.284l-2.726 2.725A2 2 0 0 1 10 12m2 4.734c-1.181 0-2.267-.32-3.236-.791l1.503-1.503c.49.35 1.086.56 1.733.56 1.654 0 3-1.346 3-3a2.97 2.97 0 0 0-.56-1.733l1.706-1.706c1.862 1.17 3.157 2.801 3.62 3.439-.755 1.041-3.72 4.734-7.766 4.734"></path></svg>
+            </div>
+            <div class="registration-password-notification">Complete this field to continue</div>
+        </div>
+
+        <div class="registration-phone-part">
+            <div class="country-code-part">
+                <input list="country-codes" id="country-code" name="country-code" placeholder="Select country code" />
+                <datalist id="country-codes">
+                    <!-- Asia -->
+                    <option value="+86 (China)">
+                    <option value="+91 (India)">
+                    <option value="+62 (Indonesia)">
+                    <option value="+63 (Philippines)">
+                    <option value="+92 (Pakistan)">
+
+                    <!-- Africa -->
+                    <option value="+234 (Nigeria)">
+                    <option value="+251 (Ethiopia)">
+                    <option value="+20 (Egypt)">
+                    <option value="+27 (South Africa)">
+                    <option value="+212 (Morocco)">
+
+                    <!-- Europe -->
+                    <option value="+7 (Russia)">
+                    <option value="+49 (Germany)">
+                    <option value="+44 (United Kingdom)">
+                    <option value="+33 (France)">
+                    <option value="+39 (Italy)">
+
+                    <!-- North America -->
+                    <option value="+1 (United States)">
+                    <option value="+52 (Mexico)">
+                    <option value="+1 (Canada)">
+                    <option value="+505 (Nicaragua)">
+                    <option value="+502 (Guatemala)">
+
+                    <!-- South America -->
+                    <option value="+55 (Brazil)">
+                    <option value="+57 (Colombia)">
+                    <option value="+54 (Argentina)">
+                    <option value="+51 (Peru)">
+                    <option value="+58 (Venezuela)">
+
+                    <!-- Oceania -->
+                    <option value="+61 (Australia)">
+                    <option value="+64 (New Zealand)">
+                    <option value="+675 (Papua New Guinea)">
+                    <option value="+679 (Fiji)">
+                    <option value="+678 (Vanuatu)">
+                </datalist>
+            </div>
+
+            <div class="phone-entry-part">
+                <div class="phone-entry-title">CELL PHONE</div>
+                <input type="phone" class="phone-entry-field">
+            </div>
+            
+        </div>
+        <div class="phone-notification">Complete this field to continue</div>
+
+        <div class="registration-checkbox-part">
+            <input type="checkbox" class="register-checkbox">
+            <div class="checkbox-agree-message">I would like personalized offers, news and the latest trends</div>
+        </div>
+
+        <div class="terms-privacy-part">By creating an account you confirm that you have read our <spam class="agree-msg">Privacy Policy</spam> and accept our <spam class="agree-msg">Terms & Conditions</spam>.</div>
+
+        <div class="create-acc-btn">
+            <button class="create-acc-CTA">Create account</button>
+        </div>
+
+        <div class="registration-footer">
+            <div class="register-footer-left">Already have an account?</div>
+            <div class="register-footer-right">Sign in</div>
+        </div>
+    </div>
+
+    <!-- Shopping Bag Container -->
+
+    <div class="shopping-bag-empty-container">
+        <div class="shopping-bag-title">Your shopping bag is empty</div>
+        <div class="shopping-bag-content">Get inspiration for your new wardrobe from the latest looks</div>
+        <div class="shopping-bag-btn">
+            <button class="shopping-bag-CTA">See what's new</button>
+        </div>
+    </div>
+
+    <!-- Shopping Bag Popup Window -->
+
+    <div class="shopping-bag-popup-window">
+        
+        <div class="shop-bag-popup-win-title">
+            <div class="popup-title-text">Shopping bag:</div>
+            <div class="popup-title-total-items">1</div>
+        </div>
+
+        <div class="shop-bag-popup-left-and-right">
+
+            <div class="shop-bag-popup-left-part">
+                <img class="shop-bag-popup-img" src="images/green-half.avif" alt="">
+                <div class="shop-bag-left-part-remove">Remove</div>
+            </div>
+    
+            <div class="shop-bag-popup-right-part">
+                <div class="shop-bag-material-name-oldest-price">
+                    <div class="shop-name-material-name"></div>
+                    <div class="shop-name-oldest-price"></div>
+                </div>
+
+                <div class="shop-bag-popup-quantyty-part">
+                    <div class="shop-bag-quantity-text">Quantity:</div>
+                    <div class="shop-bag-quantity-number">1</div>
+                </div>
+
+                <div class="shop-bag-popup-size-part">
+                    <div class="shop-bag-size-text">Size:</div>
+                    <div class="shop-bag-size-number">44</div>
+                </div>
+
+                <div class="shop-bag-popup-color-part">
+                    <div class="shop-bag-color-text">Color:</div>
+                    <div class="shop-bag-color-number">Navy</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="shop-popup-footer">
+            <div class="shop-footer-price-part">
+                <div class="shop-footer-price-text">Seasonal price:</div>
+                <div class="shop-footer-price-number"></div>
+            </div>
+
+            <div class="shop-footer-discount-part">
+                <div class="shop-footer-discount-text">Discount:</div>
+                <div class="shop-footer-discount-number"></div>
+            </div>
+
+            <div class="shop-footer-total-part">
+                <div class="shop-footer-total-text">Total:</div>
+                <div class="shop-footer-total-number"></div>
+            </div>
+        </div>
+
+        <div class="shop-bag-CTA-part">
+            <button class="shop-popup-btn">Checkout</button>
+        </div>
+    </div>
+
+    <!-- Hero-Shot Container -->
+
+    <div class="hero-shot">
+        <div class="heroshot-left">
+            <img src="images/hero-shot-image.avif" alt="" class="hero-img-left">
+        </div>
+        
+        <div class="heroshot-right">
+            <div class="hero-right-title-1">FALL BREEZES</div>
+            <div class="hero-right-title-2">UP TO 70% OFF</div>
+        </div>
+    </div>
+
+    <div class="hero-banner">
+        <div class="hero-banner-line-1">On Seasonals Basics | Online Exclusive</div>
+        <div class="hero-banner-line-2">Only Until 9/30</div>
+        <div class="hero-banner-CTA">
+            <button class="hero-banner-btn">Shop Now</button>
+        </div>
+    </div>
+
+    <!-- Product Bag SlideShow -->
+
+    <div class="slideshow-container">
+        <div class="slideshow-left-part">
+            <img src="images/green-half.avif" alt="green-suit" class="slideshow-left-img-1">
+            <img src="images/green-whole.avif" alt="green-suit" class="slideshow-left-img-2">
+
+            <img src="images/black-half.avif" alt="green-suit" class="slideshow-left-img-3">
+            <img src="images/black-whole.avif" alt="green-suit" class="slideshow-left-img-4">
+
+            <img src="images/navy-half.avif" alt="green-suit" class="slideshow-left-img-5">
+            <img src="images/navy-whole.avif" alt="green-suit" class="slideshow-left-img-6">
+
+            <img src="images/beige-half.avif" alt="green-suit" class="slideshow-left-img-7">
+            <img src="images/beige-whole.avif" alt="green-suit" class="slideshow-left-img-8">
+        </div>
+
+        <div class="slideshow-right-part">
+            <div class="slide-right-info-part">
+                <div class="product-name-price">
+                    <div class="product-name">100% linen suit blazer</div>
+                    <div class="product-price-oldest">US$ 229.99</div>
+                </div>
+                <div class="product-serial-number">
+                    <div class="serial-number">REF. 57020026-FLORIDA-LH</div>
+                    <div class="product-price-older">US$ 182.99</div>
+                </div>
+                <div class="product-actual-price">
+                    <div class="product-empty-info"></div>
+                    <div class="product-price-actual">US$ 87.99</div>
+                </div>
+                <div class="product-discount-info">
+                    <div class="product-empty-info"></div>
+                    <div class="product-price-discount">-62%</div>
+                </div>
+            </div>
+
+            <div class="decorative-line-slideshow"></div>
+            
+            <div class="color-guide">
+                <div class="color-guide-left-choose">
+                    <div class="color-green"></div>
+                    <div class="color-black"></div>
+                    <div class="color-navy"></div>
+                    <div class="color-beige"></div>
+                </div>
+                <div class="color-guide-right-name">
+                    <div class="color-name-green">Green</div>
+                    <div class="color-name-black">Black</div>
+                    <div class="color-name-navy">Navy</div>
+                    <div class="color-name-beige">Beige</div>
+                </div>
+            </div>
+
+            <div class="decorative-line-slideshow"></div>
+
+            <div class="size-guide">
+                <div class="size-guide-title">Choose your size</div>
+                <div class="size-guide-all-sizes">
+                    <div class="sizes-picker" id="size-pick-one">36</div>
+                    <div class="sizes-picker" id="size-pick-two">38</div>
+                    <div class="sizes-picker" id="size-pick-three">40</div>
+                    <div class="sizes-picker" id="size-pick-four">42</div>
+                    <div class="sizes-picker" id="size-pick-five">44</div>
+                    <div class="sizes-picker" id="size-pick-six">46</div>
+                </div>
+                <div class="size-guide-notification">Select the size you wish to add</div>
+            </div>
+
+            <div class="decorative-line-slideshow"></div>
+
+            <div class="slide-right-btn-part">
+                <button class="CTA-add-to-bag">Add to shopping bag</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Three Categories Container -->
+    <div class="three-categories-container">
+        
+        <div class="subcategory-container">
+        
+            <div class="subcategory-img-part">
+                <img src="images/shirts.avif" alt="shirt" class="subcategory-img">
+            </div>
+    
+            <div class="subcategory-text-part">
+                <div class="subcategory-text-title">SHIRTS</div>
+                <div class="subcategory-text-price">From US$ 9.99</div>
+            </div>
+    
+        </div>
+
+        <div class="subcategory-container">
+        
+            <div class="subcategory-img-part">
+                <img src="images/suits.avif" alt="shirt" class="subcategory-img">
+            </div>
+    
+            <div class="subcategory-text-part">
+                <div class="subcategory-text-title">SUITS</div>
+                <div class="subcategory-text-price">From US$ 4.99</div>
+            </div>
+    
+        </div>
+
+        <div class="subcategory-container">
+        
+            <div class="subcategory-img-part">
+                <img src="images/trousers-3categ.avif" alt="shirt" class="subcategory-img">
+            </div>
+    
+            <div class="subcategory-text-part">
+                <div class="subcategory-text-title">TROUSERS</div>
+                <div class="subcategory-text-price">From US$ 7.99</div>
+            </div>
+    
+        </div>
+
+    </div>
+
+    <!-- Circles Container -->
+
+    <div class="circles-container">
+
+        <div class="circle-subcontainer">
+            <img src="images/jeans-circle.avif" alt="jeans" class="circle-subcontainer-img">
+            <div class="circle-subcontainer-text">Jeans</div>
+        </div>
+
+        <div class="circle-subcontainer">
+            <img src="images/t-shirt-circle.avif" alt="jeans" class="circle-subcontainer-img">
+            <div class="circle-subcontainer-text">T-Shirt</div>
+        </div>
+
+        <div class="circle-subcontainer">
+            <img src="images/jackets-circle.avif" alt="jeans" class="circle-subcontainer-img">
+            <div class="circle-subcontainer-text">Jackets</div>
+        </div>
+
+        <div class="circle-subcontainer">
+            <img src="images/cardigans-circle.avif" alt="jeans" class="circle-subcontainer-img">
+            <div class="circle-subcontainer-text">Cardigans</div>
+        </div>
+
+        <div class="circle-subcontainer">
+            <img src="images/denim-circle.avif" alt="jeans" class="circle-subcontainer-img">
+            <div class="circle-subcontainer-text">Denim</div>
+        </div>
+    </div>
+
+<!-- Trending Container -->
+
+<div class="trending-container">
+
+    <div class="trending-title">OUR TRENDING</div>
+
+    <div class="trending-four-containers">
+        
+        <div class="trending-subcontrainer" id="product-to-bag-1">
+            <div class="trending-image"><img id="trending-img-1" class="trending-image-img" src="images/image-1.avif" alt=""></div>
+            <div id="trending-size-box-1" class="trending-sizes">
+                <div class="trending-add-size">Add size</div>
+                <div class="trending-six-sizes">
+                    <div class="size-by-size">36</div>
+                    <div class="size-by-size">38</div>
+                    <div class="size-by-size">40</div>
+                    <div class="size-by-size">42</div>
+                    <div class="size-by-size">44</div>
+                    <div class="size-by-size">46</div>
+                </div>
+            </div>
+            <div class="trending-material">100% linen suit blazer</div>
+            <div class="trending-price">
+                <div class="price-old">US$ 229.99</div>
+                <div class="price-new">US$ 87.99</div>
+            </div>
+        </div>
+
+        <div class="trending-subcontrainer">
+            <div class="trending-image"><img id="trending-img-2" class="trending-image-img" src="images/image-2.avif" alt=""></div>
+            <div id="trending-size-box-2" class="trending-sizes">
+                <div class="trending-add-size">Add size</div>
+                <div class="trending-six-sizes">
+                    <div class="size-by-size">29</div>
+                    <div class="size-by-size">30</div>
+                    <div class="size-by-size">31</div>
+                    <div class="size-by-size">32</div>
+                    <div class="size-by-size">34</div>
+                    <div class="size-by-size">36</div>
+                </div>
+            </div>
+            <div class="trending-material">Jude skinny-fit jeans</div>
+            <div class="trending-price">
+                <div class="price-old">US$ 30.99</div>
+                <div class="price-new">US$ 5.99</div>
+            </div>
+        </div>
+
+        <div class="trending-subcontrainer">
+            <div class="trending-image"><img id="trending-img-3" class="trending-image-img" src="images/image-3.avif" alt=""></div>
+            <div id="trending-size-box-3" class="trending-sizes">
+                <div class="trending-add-size">Add size</div>
+                <div class="trending-six-sizes">
+                    <div class="size-by-size">XS</div>
+                    <div class="size-by-size">S</div>
+                    <div class="size-by-size">M</div>
+                    <div class="size-by-size">L</div>
+                    <div class="size-by-size">XL</div>
+                    <div class="size-by-size">XXL</div>
+                </div>
+            </div>
+            <div class="trending-material">Plush cotton sweatshirt</div>
+            <div class="trending-price">
+                <div class="price-old">US$ 45.99</div>
+                <div class="price-new">US$ 18.99</div>
+            </div>
+        </div>
+
+        <div class="trending-subcontrainer">
+            <div class="trending-image"><img id="trending-img-4" class="trending-image-img" src="images/image-4.avif" alt=""></div>
+            <div id="trending-size-box-4" class="trending-sizes">
+                <div class="trending-add-size">Add size</div>
+                <div class="trending-six-sizes">
+                    <div class="size-by-size">29</div>
+                    <div class="size-by-size">30</div>
+                    <div class="size-by-size">31</div>
+                    <div class="size-by-size">32</div>
+                    <div class="size-by-size">34</div>
+                    <div class="size-by-size">36</div>
+                </div>
+            </div>
+            <div class="trending-material">Super slim fit suit pants</div>
+            <div class="trending-price">
+                <div class="price-old">US$ 70.99</div>
+                <div class="price-new">US$ 29.99</div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- New Collection -->
+
+<div class="new-collection-hero-section">
+    
+    <div class="new-collection-image-part">
+        <img class="new-collection-hero-img" src="images/new-collection-hero.avif" alt="">
+    </div>
+
+    <div class="new-collection-text-part">
+        <div class="new-collection-subtitle-part">Now available</div>
+        <div class="new-collection-title-part">NEW COLLECTION</div>
+        <div class="new-collection-btn-part">
+            <button class="new-collection-CTA">Shop now</button>
+        </div>
+    </div>
+
+</div>
+
+<!-- Subscription Section -->
+
+<div class="sub-section">
+    <div class="subscription-container">
+        <div class="subscribe-title">Discounts of more than 50% before anyone else. Sign up now!</div>
+    
+        <div class="subscribe-email-part">
+            <div class="sub-email-label">E-MAIL</div>
+            <input type="email" class="sub-email-input" placeholder="E-mail">
+        </div>
+        <div class="sub-email-notification">Complete the field to continue</div>
+
+        <div class="subscribe-button-part">
+            <button class="subscribe-CTA">Sign me up</button>
+        </div>
+    
+        <div class="sub-privacy-policy">By subscribing, you confirm that you have read the <span class="privacy-policy-hover">Privacy Policy</span>.</div>
+
+        <div class="privacy-policy-hidden-part">
+            <div class="hidden-part-title">Basic information on data protection</div>
+            <div class="hidden-part-content">
+                <span class="hidden-pp-bolded">Data Controller</span>: Punto Fa, S.L.Purpose: Sending personalized communications. <span class="hidden-pp-bolded">Rights</span>: You may exercise, at any time, your rights of access, rectification, erasure, opposition and other legally-established rights at personaldata@mango.com. <span class="hidden-pp-bolded">Additional information</span>: See more information in our <span class="hidden-pp-bolded" id="privacy-more-info">Privacy Policy</span>.
+            </div>
+        </div>
+    </div>
+    <div class="sub-thanks-msg">
+        <div class="sub-msg-title">Thank you</div>
+        <div class="sub-msg-content">
+            Your subscription has been confirmed. You've been added to our list and will hear from us soon.
+        </div>
+    </div>
+</div>
+
+<!-- Footer Section -->
+
+<div class="footer-section">
+    
+    <div class="footer-social-icons">
+    <svg class="social-icon" width="24" height="24" role="img" aria-hidden="true" class="Icon_icon-content-1__kPDLF" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 24 24"><path d="M12.033 7.894c-2.262 0-4.131 1.832-4.131 4.122s1.869 4.123 4.13 4.123c2.263 0 4.132-1.865 4.132-4.123s-1.869-4.122-4.131-4.122m0 6.805c-1.476 0-2.689-1.21-2.689-2.683s1.213-2.683 2.689-2.683 2.688 1.21 2.688 2.683-1.213 2.683-2.688 2.683m4.295-7.918a.95.95 0 1 0-.002 1.9.95.95 0 0 0 .002-1.9"></path><path d="M19.967 8.744c-.033-.85-.164-1.44-.36-1.93a3.9 3.9 0 0 0-.918-1.407c-.427-.49-.853-.785-1.41-.982-.525-.196-1.082-.327-1.935-.36C14.492 4 14.23 4 12.033 4s-2.46 0-3.312.033c-.852.065-1.442.196-1.934.392-.558.197-.984.491-1.443.916-.426.459-.721.884-.918 1.44-.197.524-.328 1.08-.36 1.93C4 9.563 4 9.825 4 12.017s0 2.454.033 3.305.164 1.44.36 1.93c.197.524.492.982.918 1.408.492.458.918.752 1.476.948.524.197 1.082.328 1.934.36S9.836 20 12.033 20s2.459 0 3.311-.033c.853-.032 1.443-.163 1.935-.36a3.9 3.9 0 0 0 1.41-.916c.459-.458.72-.883.918-1.407.196-.523.327-1.08.36-1.93S20 14.24 20 12.049s0-2.454-.033-3.305m-1.442 6.446c-.033.785-.164 1.21-.263 1.473-.13.36-.328.654-.59.916a2.3 2.3 0 0 1-.918.589c-.295.098-.721.229-1.475.261-.853.033-1.115.033-3.246.033s-2.394 0-3.246-.033c-.787-.032-1.213-.163-1.476-.261a2.46 2.46 0 0 1-.918-.59 2.3 2.3 0 0 1-.59-.915c-.098-.295-.23-.72-.262-1.473-.033-.85-.033-1.112-.033-3.24s0-2.388.033-3.238c.033-.786.164-1.211.262-1.473.131-.36.328-.654.59-.916a2.34 2.34 0 0 1 .918-.589c.296-.098.722-.229 1.476-.262.852-.032 1.115-.032 3.246-.032s2.393 0 3.246.032c.787.033 1.213.164 1.475.262.36.131.656.327.918.59.295.294.46.555.59.915.099.295.23.72.263 1.473.032.85.032 1.112.032 3.239s0 2.388-.032 3.24z"></path></svg>
+    <svg class="social-icon" width="24" height="24" role="img" aria-hidden="true" class="Icon_icon-content-1__kPDLF" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 24 24"><path d="M24.399 8.003 22.305 8c-2.351 0-3.871 1.546-3.871 3.938v1.815h-2.105a.33.33 0 0 0-.329.327v2.63c0 .18.147.326.33.326h2.104v6.638c0 .18.147.326.329.326h2.746c.182 0 .33-.146.33-.326v-6.638h2.46c.182 0 .33-.146.33-.326v-2.63a.325.325 0 0 0-.33-.327h-2.46v-1.539c0-.74.177-1.115 1.15-1.115h1.41a.33.33 0 0 0 .328-.327V8.33a.33.33 0 0 0-.328-.327" transform="translate(-8 -4)"></path></svg>
+    <svg class="social-icon" width="24" height="24" role="img" aria-hidden="true" class="Icon_icon-content-1__kPDLF" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 24 24"><path d="M23.803 14.46s-.147-1.107-.639-1.599c-.614-.64-1.278-.64-1.597-.689C19.33 12 15.987 12 15.987 12s-3.342 0-5.578.172c-.32.05-.984.05-1.598.69-.467.491-.639 1.599-.639 1.599S8 15.765 8 17.044v1.206c0 1.304.172 2.584.172 2.584s.148 1.107.64 1.599c.613.64 1.4.615 1.769.689 1.278.123 5.431.172 5.431.172s3.367 0 5.604-.172c.32-.05.983-.05 1.598-.69.466-.491.639-1.598.639-1.598S24 19.529 24 18.25v-1.206a41 41 0 0 0-.197-2.583zm-9.487 5.266v-4.503l4.326 2.264z" transform="translate(-4 -6)"></path></svg>
+    <svg class="social-icon" width="24" height="24" role="img" aria-hidden="true" class="Icon_icon-content-1__kPDLF" xmlns="http://www.w3.org/2000/svg"><path fill="#161823" fill-rule="evenodd" d="M14.494 4.654c.18.983.76 1.825 1.564 2.352v.001A3.53 3.53 0 0 0 18 7.588v2.578a6.07 6.07 0 0 1-3.566-1.154v5.241C14.434 16.87 12.32 19 9.718 19a4.67 4.67 0 0 1-2.703-.86l-.001-.002A4.75 4.75 0 0 1 5 14.253c0-2.617 2.116-4.747 4.717-4.747q.324.002.635.047v.61c-2.373.057-4.318 1.883-4.577 4.216.26-2.332 2.204-4.159 4.576-4.214v2.022c-.2-.063-.414-.1-.635-.1a2.164 2.164 0 0 0-2.154 2.167 2.17 2.17 0 0 0 2.155 2.168c1.16 0 2.108-.93 2.15-2.086L11.871 4h2.562q.002.337.06.654Z" clip-rule="evenodd"></path></svg>
+    <svg class="social-icon" width="24" height="24" role="img" aria-hidden="true" class="Icon_icon-content-1__kPDLF" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 24 24"><path d="M23.983 16.01c0 .122-.003.246 0 .368.03 1-.24 1.938-.632 2.842a7.85 7.85 0 0 1-2.761 3.353 7.9 7.9 0 0 1-3.092 1.294 8.4 8.4 0 0 1-2.104.113 7.65 7.65 0 0 1-3.101-.888 8 8 0 0 1-4.269-7.7c.122-1.557.648-2.97 1.6-4.21 1.174-1.528 2.695-2.546 4.58-2.966 2.492-.554 4.77-.041 6.79 1.525 1.216.942 2.069 2.159 2.582 3.607.305.858.481 1.742.407 2.662m-9.346 2.297c-.565.003-1.007.016-1.45.067a15 15 0 0 0-1.716.295.486.486 0 0 0-.362.586c.07.288.32.445.603.384a14 14 0 0 1 1.748-.282c.779-.073 1.552-.07 2.328.032a7.6 7.6 0 0 1 2.941 1.016c.257.157.555.083.7-.16.144-.244.07-.535-.18-.695a7 7 0 0 0-1.04-.535 8.8 8.8 0 0 0-3.572-.708m6.185-1.033c.016-.282-.134-.458-.362-.59a10.2 10.2 0 0 0-2.319-.99 12.5 12.5 0 0 0-3.04-.474 11.5 11.5 0 0 0-1.52.055q-1.03.095-2.021.39a.626.626 0 0 0-.44.789.65.65 0 0 0 .806.41c.933-.298 1.898-.391 2.87-.394.51 0 1.02.035 1.527.115.66.102 1.308.247 1.94.464a9 9 0 0 1 1.626.75.608.608 0 0 0 .933-.525m-6.008-5.04c-.424 0-.844.028-1.264.057q-1.199.084-2.36.394c-.164.045-.33.093-.462.211a.75.75 0 0 0-.157.92c.17.31.52.458.875.355 1.087-.317 2.204-.426 3.333-.439.266-.003.532.013.798.023a12 12 0 0 1 1.543.147c1.283.205 2.52.545 3.653 1.204a.736.736 0 0 0 1.013-.281.754.754 0 0 0-.285-1.025 9.7 9.7 0 0 0-1.671-.766c-1.626-.57-3.304-.788-5.016-.8" transform="translate(-4 -4)"></path></svg>
+    <svg class="social-icon" width="24" height="24" role="img" aria-hidden="true" class="Icon_icon-content-1__kPDLF" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 24 24"><path d="M21.604 9.64C20.436 8.582 18.82 8 17.054 8c-2.699 0-4.358 1.043-5.276 1.918C10.648 10.997 10 12.43 10 13.848c0 1.78.79 3.148 2.113 3.656a.7.7 0 0 0 .265.052c.28 0 .5-.172.577-.449.045-.158.148-.55.193-.719.096-.335.019-.496-.191-.73-.383-.427-.561-.931-.561-1.588 0-1.952 1.54-4.026 4.396-4.026 2.266 0 3.674 1.214 3.674 3.17 0 1.233-.282 2.376-.794 3.217-.355.585-.98 1.281-1.94 1.281-.416 0-.789-.16-1.024-.44a1.06 1.06 0 0 1-.207-.965c.101-.404.24-.824.372-1.23.244-.744.473-1.445.473-2.005 0-.957-.624-1.6-1.552-1.6-1.18 0-2.105 1.13-2.105 2.573 0 .708.2 1.238.29 1.44-.149.595-1.032 4.127-1.2 4.793-.097.389-.68 3.46.286 3.704 1.085.275 2.056-2.715 2.154-3.053.08-.275.36-1.315.532-1.953.524.476 1.368.798 2.19.798a4.99 4.99 0 0 0 3.919-1.85c.95-1.157 1.473-2.77 1.473-4.54 0-1.385-.63-2.75-1.729-3.744" transform="translate(-5 -4)"></path></svg>
+    <svg class="social-icon" width="24" height="24" role="img" aria-hidden="true" class="Icon_icon-content-1__kPDLF" xmlns="http://www.w3.org/2000/svg"><path d="M13.927 10.351 19.511 4h-1.323l-4.849 5.515L9.467 4H5l5.856 8.34L5 19h1.323l5.12-5.824L15.534 19H20zm-1.812 2.062-.594-.83-4.72-6.608h2.032l3.81 5.332.593.83 4.953 6.933h-2.033z"></path></svg>
+    <svg class="social-icon" width="24" height="24" role="img" aria-hidden="true" class="Icon_icon-content-1__kPDLF" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 24 24"><path d="M24 18.055v5.714h-3.43v-5.331c0-1.34-.495-2.254-1.737-2.254-.947 0-1.511.616-1.76 1.212-.09.213-.113.51-.113.808v5.565h-3.43s.046-9.03 0-9.965h3.43v1.412l-.023.033h.023v-.033c.455-.678 1.27-1.646 3.091-1.646 2.257 0 3.949 1.424 3.949 4.485M9.941 9C8.768 9 8 9.744 8 10.721c0 .957.745 1.723 1.896 1.723h.023c1.196 0 1.94-.766 1.94-1.723C11.836 9.744 11.115 9 9.94 9zM8.204 23.77h3.429v-9.966h-3.43v9.965z" transform="translate(-4 -5)"></path></svg>
+    </div>  
+
+    <div class="footer-menu">
+        <div class="footer-menu-links">© 2024 MANGO All rights reserved</div>
+        <div class="footer-decorative-line">|</div>
+        <div class="footer-menu-links">Privacy Policy and Cookies</div>
+        <div class="footer-decorative-line">|</div>
+        <div class="footer-menu-links">Terms and conditions</div>
+        <div class="footer-decorative-line">|</div>
+        <div class="footer-menu-links">Ethics Channel</div>
+        <div class="footer-decorative-line">|</div>
+        <div class="footer-menu-links">Do Not Sell or Share My Personal Information</div>
+    </div>
+</div>
+
+
+
+
+<script src="script.js"></script>
+</body>
+</html>
